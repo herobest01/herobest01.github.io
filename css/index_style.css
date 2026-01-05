@@ -1,0 +1,335 @@
+/*Fint*/
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+/*Google Sans*/
+
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+/*Noto Sans(kor)*/
+
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/*Namum Square(kor)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');/*Courier Prime*/
+
+
+@font-face { /*Ria*/
+    font-family: 'Ria';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/RiaSans-ExtraBold.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@keyframes logo_rotate{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+@keyframes logo_rotate_rev{
+  0%{transform: rotate(360deg);}
+  100%{transform: rotate(0deg);}
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+ul, ol{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+body{
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------header--------------------*/
+header{
+  width: 100%;
+  height: 70px;
+  background: #999;
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+
+  display: block;
+
+  z-index: 10;
+}
+/*site name*/
+header .title a{
+  font: 30px/1 "Ria", "arial";
+  letter-spacing: 1px;
+  color: #e00;
+
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+/*bar icon*/
+header .title_icon ul{
+  display: flex;
+  float: right;
+
+  position: absolute;
+  right: 0px;
+  top: 15px;
+}
+header .title_icon ul li{
+  content: "";
+  display: block;
+  clear: both;
+}
+header .title_icon ul li a{
+  font-size: 25px;
+  color: #fff;
+
+  margin-right: 25px;
+
+  transition: 0.5s;
+}
+
+header .title_icon ul li:nth-of-type(1) a:hover{
+  font-size: 30px;
+  color: red; 
+}
+header .title_icon ul li:nth-of-type(2) a:hover{
+  font-size: 30px;
+  color: black;
+}
+
+/*--------------------main--------------------*/
+main{
+  box-sizing: border-box;
+}
+main figure{
+  width: 100%;
+  height: calc(100vh);
+
+  position: relative;
+  left: 0px;
+  top: 70px;
+
+  background: black;
+
+  box-sizing: border-box;
+
+  /*visibility: hidden;------------*/
+}
+main figure::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+main figure video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+
+  display: block;
+}
+main figure h1{
+  font: 85px "Ria","arial";
+  color: red;
+  opacity: 0.6;
+
+  position: absolute;
+  top: 80px;
+  left: 20px;
+
+  transition: 1.0s;
+}
+main figure h1:hover{
+  opacity: 1.0;
+}
+
+main figure span{
+  font: 80px "Google Sans","arial";
+  color: white;
+
+  position: absolute;
+  top: 190px;
+  left: 24px;
+}
+
+main figure div.figure_button{
+  width: 200px;
+  height: 75px;
+
+  border: 1px solid white;
+  border-radius: 15px;
+  background: none;
+
+  position: absolute;
+  left: 24px;
+  top: 370px;
+
+  transition: 0.7s;
+}
+
+main figure div.figure_button a{
+  font: 25px "Google Sans";
+  color: white;
+
+  cursor: default;
+
+  position: absolute;
+  left: 25px;
+  top: 15px;
+
+  transition: 0.7s;
+}
+
+main figure div.figure_button:hover{
+  background-color: white;
+  border-radius: 0%;
+}
+main figure div.figure_button:hover a{
+  font-weight: bold;
+  color: black;
+
+  left: 23px;
+}
+
+/*article 01*/
+main article.intro{
+  width: 100%;
+  height: calc(100vh - 70px);
+
+  padding-left: 20px;
+
+  background: #000;
+
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  display: block;
+}
+main article.intro::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+main article.intro h2{
+  font: bold 60px "Nanum Square","arial";
+  color: yellow;
+
+  padding-top: 150px;
+  text-align: center;
+
+  transition: 0.5s;
+}
+main article.intro h2:hover{
+  font-size: 75px;
+  color: #fff;
+}
+
+main article.intro p{
+  font: normal 25px "Nanum Square","arial";
+  color: yellow;
+
+  padding-top: 50px;
+  text-align: center;
+  line-height: 1.5;
+
+  transition: 0.5s;
+}
+
+/*cretor*/
+main article.creator{
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #500, #d00);
+
+  position: relative;
+
+  padding: 60px;
+  
+  display: block;
+}
+main article.creator h2{
+  display: flex;
+}
+main article.creator h2 i{
+  font-size: 75px;
+}
+main article.creator h2 p{
+  font: bold 75px/1 "Google Sans";
+  color: #fff;
+}
+main article.creator h2 i{
+  color: #fff;
+  
+  margin-right: 15px;
+  margin-bottom: 30px;
+
+  transition: 0.5s;
+}
+/*유튜브로고 회전*/
+main article.creator h2 i:hover{
+  animation: logo_rotate cubic-bezier(0,-0.15,0,.99) 1.0s;
+}
+
+main article.creator span{
+  font: normal 45px/1 "Nanum Square","Google Sans";
+  float: left;
+}
+main article.creator span p.molu{
+  font: bold 100px/1.2 "Nanum Sqaure","Google Sans"; 
+  color: #0cc;
+
+  margin-bottom: 15px;
+
+  transition: 0.5s;
+}
+main article.creator span p.molu:hover{
+  color: rgb(0, 188, 0);
+
+  cursor: no-drop;
+}
+main article.creator span p.partyAniamls{
+  font: bold 90px/1.2 "Nanum Square","Google Sans";
+  color: rgb(255, 197, 158);
+
+  margin-bottom: 15px;
+}
+
+main article.creator video.molu_video{
+  width: 560px;
+  height: 300px;
+
+  position: absolute;
+  right: 70px;
+  top: 180px;
+
+  object-fit: cover;
+}
+
+/*played game article*/
+main article.played_game{
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(80deg, #002, #000);
+
+  padding: 50px;
+
+  display: block;
+}
+main article.played_game div.steam h2{
+  display: flex;
+}
+main article.played_game div.steam h2 i{
+  font-size: 70px;
+  color: #fff;
+
+  margin-right: 15px;
+}
+main article.played_game div.steam h2 p{
+  font: bold 70px "Google Sans";
+  color: #fff;
+}
+
+/*--------------------footer--------------------*/
