@@ -10,7 +10,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');/*Courier Prime*/
 
-
 @font-face { /*Ria*/
     font-family: 'Ria';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/RiaSans-ExtraBold.woff2') format('woff2');
@@ -58,7 +57,7 @@ header{
   z-index: 10;
 }
 /*site name*/
-header .title a{
+header .title>a{ /*상단 바 mememuum 글자*/
   font: 30px/1 "Ria", "arial";
   letter-spacing: 1px;
   color: #e00;
@@ -68,7 +67,7 @@ header .title a{
   top: 20px;
 }
 /*bar icon*/
-header .title_icon ul{
+header .title_icon>ul{ /*상단 바 아이콘 영역*/
   display: flex;
   float: right;
 
@@ -76,12 +75,12 @@ header .title_icon ul{
   right: 0px;
   top: 15px;
 }
-header .title_icon ul li{
+header .title_icon ul li{ /*상단 바 아이콘 li*/
   content: "";
   display: block;
   clear: both;
 }
-header .title_icon ul li a{
+header .title_icon ul li a{ /*상단 바 아이콘 li a*/
   font-size: 25px;
   color: #fff;
 
@@ -103,7 +102,7 @@ header .title_icon ul li:nth-of-type(2) a:hover{
 main{
   box-sizing: border-box;
 }
-main figure{
+main figure{ /*1page 영역*/
   width: 100%;
   height: calc(100vh);
 
@@ -115,14 +114,14 @@ main figure{
 
   box-sizing: border-box;
 
-  /*visibility: hidden;------------*/
+  /*visibility: hidden;*/
 }
 main figure::after{
   content: "";
   display: block;
   clear: both;
 }
-main figure video{
+main figure video{ /*1page 영역 배경 영상*/
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -130,7 +129,7 @@ main figure video{
 
   display: block;
 }
-main figure h1{
+main figure h1{ /*1page mememuum글자*/
   font: 85px "Ria","arial";
   color: red;
   opacity: 0.6;
@@ -145,7 +144,7 @@ main figure h1:hover{
   opacity: 1.0;
 }
 
-main figure span{
+main figure span{ /*1page in Insanity 글자*/
   font: 80px "Google Sans","arial";
   color: white;
 
@@ -154,7 +153,7 @@ main figure span{
   left: 24px;
 }
 
-main figure div.figure_button{
+main figure div.figure_button{ /*1page View more...버튼*/
   width: 200px;
   height: 75px;
 
@@ -169,7 +168,7 @@ main figure div.figure_button{
   transition: 0.7s;
 }
 
-main figure div.figure_button a{
+main figure div.figure_button a{ /*View more...버튼 글자*/
   font: 25px "Google Sans";
   color: white;
 
@@ -193,7 +192,7 @@ main figure div.figure_button:hover a{
   left: 23px;
 }
 
-/*article 01*/
+/*article 01, page2*/
 main article.intro{
   width: 100%;
   height: calc(100vh - 70px);
@@ -213,7 +212,7 @@ main article.intro::after{
   display: block;
   clear: both;
 }
-main article.intro h2{
+main article.intro h2{ /*'아싸니티의 시작' 텍스트*/
   font: bold 60px "Nanum Square","arial";
   color: yellow;
 
@@ -227,7 +226,7 @@ main article.intro h2:hover{
   color: #fff;
 }
 
-main article.intro p{
+main article.intro p{ /*본문*/
   font: normal 25px "Nanum Square","arial";
   color: yellow;
 
@@ -238,7 +237,7 @@ main article.intro p{
   transition: 0.5s;
 }
 
-/*cretor*/
+/*cretor, 3page*/
 main article.creator{
   width: 100%;
   height: calc(100vh - 70px);
@@ -253,14 +252,8 @@ main article.creator{
 main article.creator h2{
   display: flex;
 }
-main article.creator h2 i{
+main article.creator h2 i{ /*youtube로고*/
   font-size: 75px;
-}
-main article.creator h2 p{
-  font: bold 75px/1 "Google Sans";
-  color: #fff;
-}
-main article.creator h2 i{
   color: #fff;
   
   margin-right: 15px;
@@ -268,6 +261,11 @@ main article.creator h2 i{
 
   transition: 0.5s;
 }
+main article.creator h2 p{ /*youtube옆 'mememuum youtube'텍스트*/
+  font: bold 75px/1 "Google Sans";
+  color: #fff;
+}
+
 /*유튜브로고 회전*/
 main article.creator h2 i:hover{
   animation: logo_rotate cubic-bezier(0,-0.15,0,.99) 1.0s;
@@ -297,9 +295,9 @@ main article.creator span p.partyAniamls{
   margin-bottom: 15px;
 }
 
-main article.creator video.molu_video{
-  width: 560px;
-  height: 300px;
+main article.creator video.molu_video{ /*molu.mp4 영상*/
+  width: 30vw;
+  height: 30vh;
 
   position: absolute;
   right: 70px;
@@ -307,8 +305,12 @@ main article.creator video.molu_video{
 
   object-fit: cover;
 }
+/* molu영상 오른쪽 바
+main article.creator video.molu_video::after{
 
-/*played game article*/
+}*/
+
+/*played game article, 4page*/
 main article.played_game{
   width: 100%;
   height: calc(100vh - 70px);
@@ -318,18 +320,184 @@ main article.played_game{
 
   display: block;
 }
+
+main article.played_game .played_game_title{ /*4page 타이틀*/
+  width: 100%;
+  height: 10%;
+
+  font: bold 60px/1 "Google Sans","arial";
+  color: #fff;
+
+  display: flex;
+}
+main article.played_game .played_game_title p{
+  font-family: 'Ria','arial';
+  color: #d00;
+
+  margin-right: 5px;
+  margin-bottom: 20px;
+}
+
+main article.played_game div.steam{ /*steam영역*/
+  width: 100%;
+  height: 45%;
+}
 main article.played_game div.steam h2{
   display: flex;
 }
-main article.played_game div.steam h2 i{
-  font-size: 70px;
+main article.played_game div.steam h2 i{ /*steam로고*/
+  font-size: 55px;
   color: #fff;
 
   margin-right: 15px;
 }
-main article.played_game div.steam h2 p{
-  font: bold 70px "Google Sans";
+main article.played_game div.steam h2 p{/*steam로고 옆 텍스트*/
+  font: normal 50px "Google Sans";
+  color: #fff;
+}
+
+main article.played_game .steam_game_logo{ /*steam 게임 로고*/
+  display: flex;
+}
+main article.played_game .steam_game_logo img{
+  width: 240px;
+  height: 135px;
+
+  margin-top: 45px;
+  margin-right: 10px;
+
+  object-fit: contain;
+
+  transition: 0.7s;
+}
+main article.played_game .steam_game_logo img:hover{
+  width: 320px;
+  height: 220px;
+}
+
+main article.played_game div.epicGames{ /*epic영역*/
+  width: 100%;
+  height: 45%;
+}
+main article.played_game div.epicGames h2{
+  display: flex;
+}
+main article.played_game div.epicGames h2 img{ /*epic 로고 사진*/
+  width: 55px;
+  height: 60px;
+
+  display: flex;
+
+  
+  margin-right: 15px;
+  margin-left: 5px;
+}
+main article.played_game .epic_game_logo img{
+  width: 240px;
+  height: 135px;
+
+  margin-top: 45px;
+  margin-right: 10px;
+
+  object-fit: contain;
+
+  transition: 0.7s;
+}
+main article.played_game .epic_game_logo img:hover{
+  width: 320px;
+  height: 220px;
+}
+main article.played_game div.epicGames h2 p{ /*epic로고 옆 텍스트*/
+  font: normal 50px "Google Sans";
   color: #fff;
 }
 
 /*--------------------footer--------------------*/
+footer{
+  width: 100%;
+  height: 120px;
+
+  background: #fff;
+
+  padding: 20px;
+
+  position: absolute;
+  left: 0px;
+}
+footer .footer_insanity{
+  font: bold 35px/1 'Nanum Square','arial';
+  color: #000;
+}
+footer .footer_maker{
+  font: normal 25px/1 'Nanum Square','arial';
+  color: #717171;
+
+  margin-top: 8px;
+}
+
+
+/*창크기 변화*/
+@media screen and (max-width:559px) { /*mobile*/
+  /*main, 1page*/
+  main figure h1{
+    font-size: 55px;
+
+    text-align: center;
+  }
+  main figure span{
+  font-size: 50px;
+
+  position: absolute;
+  top: 150px;
+  left: 24px;
+  }
+
+  /*2page*/
+  main article.intro h2{ /*'아싸니티의 시작' 텍스트*/
+  font-size: 45px;
+  }
+  main article.intro h2:hover{
+    font-size: 50px;
+    color: #fff;
+  }
+  main article.intro p{ /*2page 본문*/
+    font-size: 15px;
+
+    margin-top: 55px;
+  }
+
+  /*3page*/
+  main article.creator{
+    padding: 20px;
+  }
+  main article.creator h2 i{ /*youtube로고*/
+    font-size: 50px;
+    color: #fff;
+    
+    margin-bottom: 25px;
+  }
+  main article.creator h2 p{ /*youtube옆 'mememuum youtube'텍스트*/
+    font-size: 35px;
+
+    margin-top: 5px;
+  }
+
+  main article.creator span{
+  font-size: 45px;
+  }
+
+  main article.creator span p.molu{
+    font-size-adjust: 70px; 
+
+    margin-bottom: 15px;
+  }
+  main article.creator span p.partyAniamls{
+    font-size: 70px;
+    color: rgb(255, 197, 158);
+
+    margin-bottom: 15px;
+  }
+
+  /*4page, played games*/
+  /*footer*/
+}
